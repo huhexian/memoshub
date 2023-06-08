@@ -39,10 +39,6 @@ var headHrefs = {
 };
 
 
-// twikoo评论请求api（先启动twikoo评论服务）
-var twikooEnvId = "";
-
-
 // 首页banner轮播图（注意最后一条不要逗号，如不需要轮播图，改成 var banlist = []; 即可）
 var banlist = [];
 // var banlist = [{
