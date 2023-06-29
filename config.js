@@ -1,47 +1,42 @@
 
 /**************** ↓以下为需要自定义修改的部分 ↓ ******************/
 
-
-// 域名（注意最后面不要有 / ）
-var domains = [
-    "https://memo.eirms.com",
-    "https://memos.laozhang.org",
-    "https://say.veryjack.com",
-    "https://memos.1900.live",
-    "https://memos.vlieo.com",
-    "https://api.mm.xlap.top",
-    "https://s.dusays.com",
-    "https://isay.live"
+// 人员列表
+var infos = [
+  {
+    "name": "老张",
+    "api": "https://memos.laozhang.org", // memos api域名
+    "site": "https://laozhang.org", // 个人网站域名
+    "avatar": "https://zhangsir.s3.us-east-005.backblazeb2.com/2023/05/13/645ebca844b3a.png",  // 头像
+    "comment":true, // 评论开关
+    "comment_server_adress": "https://artalk.laozhang.org/", // 评论服务接口地址
+    "comment_site_name": "memos"  // artalk 评论site
+  },
+  {
+    "name": "1900",
+    "api": "https://memos.1900.live",
+    "site": "https://1900.live",
+    "avatar": "https://cdn.1900.live/202205/logodeng-pao-fang-an-3.png",
+    "comment":true
+  },
+  {
+    "name": "林木木",
+    "api": "https://me.edui.fun", 
+    "site": "https://immmmm.com", 
+    "avatar": "https://cravatar.cn/avatar/ba83fa02fc4b2ba621514941307e21be",
+    "comment":true
+  },
+  {
+    "name": "记忆一隅",
+    "api": "https://memos.vlieo.com",
+    "site": "https://vlieo.com",
+    "avatar": "https://vlieo.com/images/avatar.png?v=1687790747714",
+    "comment":true
+  }
 ];
 
-// 头像
-var headUrls = {
-    "https://memos.laozhang.org":"https://zhangsir.s3.us-east-005.backblazeb2.com/2023/05/13/645ebca844b3a.png",
-    "https://memo.eirms.com":"https://dogefs.s3.ladydaily.com/lucy/storage/1680832936501.png",
-    "https://say.veryjack.com":"https://pix.veryjack.com/i/2023/04/04/fsxnkv.webp",
-    "https://memos.1900.live":"https://cdn.1900.live/202205/logodeng-pao-fang-an-3.png",
-    "https://memos.vlieo.com":"https://vlieo.com/images/avatar.png?v=1681480182253",
-    "https://api.mm.xlap.top":"https://api.mm.xlap.top/logo.png",
-    "https://s.dusays.com":"https://cravatar.cn/avatar/c1b204bab687a23c8b6d7c8de11c7c59",
-    "https://isay.live":"https://cravatar.cn/avatar/f0e33f4d097fe2e9fd74b9b129e7a655"
-};
-
-// 头像点击链接
-var headHrefs = {
-     "https://memo.eirms.com":   "https://memo.eirms.com",
-    "https://memos.laozhang.org":"https://memos.laozhang.org",
-    "https://say.veryjack.com":"https://say.veryjack.com",
-    "https://memos.1900.live":"https://memos.1900.live",
-    "https://memos.vlieo.com":"https://memos.vlieo.com",
-    "https://api.mm.xlap.top":"https://api.mm.xlap.top",
-    "https://s.dusays.com":"https://s.dusays.com",
-    "https://isay.live":"https://isay.live"
-};
-
-
-// twikoo评论请求api（先启动twikoo评论服务）
-var twikooEnvId = "";
-
+// 每次加载每个人多少条
+var limit = 5;
 
 // 首页banner轮播图（注意最后一条不要逗号，如不需要轮播图，改成 var banlist = []; 即可）
 var banlist = [];
@@ -58,7 +53,6 @@ var banlist = [];
 //     active:""
 // }];
 
-// 每次拉取每个人多少条
-var limit = 5;
+
 /**************** ↑以上为需要自定义修改的部分↑ ******************/
 

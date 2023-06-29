@@ -21,11 +21,13 @@
         <meta name="format-detection" content="address=no">
         <meta name="format-detection" content="date=no">
         <title>
-            朋友圈广场
+            Memos - Hub
         </title>
         <meta name="keywords" content="">
         <meta name="description" content="">
         <meta name="robots" content="max-image-preview:large">
+
+      
         <link rel="stylesheet" id="classic-theme-styles-css" href="css/classic-themes.min.css"
         type="text/css" media="all">
         <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.min.css"
@@ -39,10 +41,24 @@
         <link href="https://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css"
         rel="stylesheet">
         <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
-        <style type="text/css">
+          <style type="text/css">
+            [v-cloak] {
+                display:none !important;
+            }
             body {
               font-family: "LXGW WenKai Screen", sans-serif;
             }
+             .pic {
+                    object-fit: cover;
+                    height:142px;
+                    width: 142px;
+                    border-radius: 4px;
+                  }
+
+                  a img {
+                    border-radius: 5px;
+                    margin: 2px;
+                  }
         </style>
     </head>
     <body class="home blog" >
@@ -62,33 +78,41 @@
                             <a  href="index.html" title="">
                                 <img src="img/202209211355582.png" alt="">
                                 <b>
-                                    朋友圈广场
+                                    Memos
                                 </b>
                             </a>
                         </h1>
                         <nav class="header-menu">
                             <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa" class="header-menu-ul">
-                                <li id="menu-item-35" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35">
-                                    <a  href="/">
+                                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-35">
+                                    <a  href="index.html">
                                         <i class="bi bi-palette me-1">
                                         </i>
-                                        首页
+                                        Memos Hub
                                     </a>
                                 </li>
-                                 <!--      <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
-                                    <a href="https://">
-                                        <i class="bi bi-palette me-1">
-                                        </i>
-                                        ..
+                                <li  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
+                                    <a href="javascript:alert('开发中')">
+                                      RSS Hub
+                                    </a>
+                                </li>
+                                <li id="menu-item-1182" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1182">
+                                    <a>
+                                        联系我/想加入
                                     </a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
-                                            <a href="https://">
-                                                ..
+                                            <a  href="https://zuofei.net/about.html" target="_blank">
+                                              今是昨非
+                                            </a>
+                                        </li>
+                                        <li id="menu-item-1290" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1290">
+                                            <a  href="https://hanyu.life/blog/about/" target="_blank">
+                                              Yu
                                             </a>
                                         </li>
                                     </ul>
-                                </li> -->
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -97,15 +121,15 @@
                             <i class="bi bi-lightbulb-fill">
                             </i>
                         </div>
-                        <button class="top_r_an" type="button" data-bs-toggle="offcanvas" data-bs-target="#c_sousuo">
+                       <!--  <button class="top_r_an" type="button" data-bs-toggle="offcanvas" data-bs-target="#c_sousuo">
                             <i class="bi bi-search">
                             </i>
-                        </button>
+                        </button> -->
                     </div>
                 </div>
             </div>
         </header>
-        <div class="offcanvas offcanvas-top" id="c_sousuo">
+<!--         <div class="offcanvas offcanvas-top" id="c_sousuo">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-10 col-lg-6 search_box">
@@ -120,13 +144,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="offcanvas offcanvas-start" id="mobile_right_nav">
             <div class="mobile_head">
                 <div class="mobile_head_logo">
                     <img src="img/202209211355582.png" alt="">
                     <b>
-                       朋友圈广场
+                        Memos
                     </b>
                 </div>
                 <div class="theme-switch" onclick="switchDarkMode()">
@@ -174,7 +198,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div :class="'carousel-item '+item.active" v-for="item in banlist">
-                            <a class="banlist" :href="item.href">
+                            <a class="banlist" :href="item.href" target="_blank">
                                  <img width="900" height="350" :src="item.img"
                                 class="attachment-900x350x1 size-900x350x1 wp-post-image" alt="" decoding="async"
                                 loading="lazy">
@@ -213,6 +237,21 @@
                 </div>
             </div>
         </section>
+                <section class="index_banner">
+            <div class="container">
+                <div id="banner" class="carousel slide" data-bs-ride="carousel">
+                  
+                    <div class="carousel-inner">
+                        <div style="display:flex;flex-wrap: wrap;justify-content: left">
+                             <a :href="info.site" v-for="info in infos" target="_blank"><img width="45" height="45" style="margin: 6px;border-radius: 50%;" :src="info.avatar"
+                                class="attachment-900x350x1 size-900x350x1 wp-post-image" /></a>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="index_area">
             <div class="container">
                 <div class="row g-4">
@@ -221,13 +260,13 @@
                             <div class="post_loop" v-for="item in datas">
                                 <div class="post_loop_head">
                                     <div class="post_loop_head_author">
-                                        <a class="images_author" :href="item.headHrefs">
-                                            <img alt="" :src="item.headUrls" class="avatar avatar-80 photo"
+                                        <a class="images_author" :href="item.site"  target="_blank">
+                                            <img alt="" :src="item.avatar" class="avatar avatar-80 photo"
                                             height="80" width="80" loading="lazy" decoding="async">
                                         </a>
                                         <div class="images_author_name">
                                             <h3>
-                                                <a  :href="item.headHrefs">
+                                                <a  :href="item.site" target="_blank">
                                                     <u>{{ item.creatorName }}</u>
                                               </a>
                                             </h3>
@@ -236,26 +275,26 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <a class="post_loop_more" :href="'detail.html?id='+item.id+'&domain='+item.domain">
+                                   <!--  <a class="post_loop_more" :href="'detail.html?id='+item.id+'&domain='+item.domain">
                                         <i class="bi bi-three-dots">
                                         </i>
-                                    </a>
+                                    </a> -->
                                 </div>
                                 <div class="post_loop_conter">
                                     <div class="post_loop_title_box">
                                         <div v-html='item.content'>
                                         </div>
                                     </div>
-                                    <div :class="'post_images post_img_'+(item.resourceList.length >=9 ? 9 : item.resourceList.length)" v-if="item.resourceList.length != 0">
+                                    <div  style="display: flex;flex-wrap: wrap"   v-if="item.resourceList.length != 0">
                                         <template  v-for="img in item.resourceList" >
-                                                <a v-if="img.externalLink != '' " data-fancybox="post-1437" :href="img.externalLink " style="border: 1px dashed #eee;">
-                                                    <img :src="img.externalLink">
+                                                <a v-if="img.externalLink != '' " data-fancybox="post-1437" :href="img.externalLink ">
+                                                    <img :src="img.externalLink" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
                                                 </a>
-                                                <a v-else-if="(img.publicId == undefined || img.publicId == '') && img.externalLink == '' " data-fancybox="post-1437" :href="img.domain + imgUri + img.id + '/' + img.filename" style="border: 1px dashed #eee;">
-                                                    <img :src="img.domain + imgUri + img.id + '/' + img.filename">
+                                                <a v-else-if="(img.publicId == undefined || img.publicId == '') && img.externalLink == '' " data-fancybox="post-1437" :href="item.api + imgUri + img.id + '/' + img.filename" >
+                                                    <img :src="item.api + imgUri + img.id + '/' + img.filename" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
                                                 </a>
-                                                <a v-else="img.publicId != '' && img.externalLink == '' " data-fancybox="post-1437" :href="img.domain + imgUri + img.id + '/' + img.publicId + '/'+img.filename" style="border: 1px dashed #eee;">
-                                                    <img :src="img.domain + imgUri + img.id + '/' + img.publicId + '/'+ img.filename">
+                                                <a v-else="img.publicId != '' && img.externalLink == '' " data-fancybox="post-1437" :href="item.api + imgUri + img.id + '/' + img.publicId + '/'+img.filename" >
+                                                    <img :src="item.api + imgUri + img.id + '/' + img.publicId + '/'+ img.filename" :class="item.resourceList.length > 1 ? 'pic': 'post_img_1'">
                                                 </a>
                                          </template>
                                         
@@ -270,14 +309,25 @@
                                         </em>
                                     </div>
                                     <div class="post_info_footer">
-                                        <span class="">
+                                        <span v-if="item.comment == true || item.comment == 'true'">
                                             <i class="bi bi-chat-square-text-fill">
                                             </i>
-                                            <a :href="'detail.html?id='+item.id+'&domain='+item.domain">
-                                                {{ item.commentCount }}评论
+                                            <!-- <a :href="'detail.html?id='+item.id+'&site='+item.site.split('://')[1]"> -->
+                                                <!-- :href="'detail.html?id='+item.id+'&site='+item.api" -->
+                                                <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-if="item.comment_server_adress == '' || item.comment_server_adress == undefined || item.comment_server_adress == null">平台评论
+                                            </a>
+                                             <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-else>评论
+                                            </a>
+                                        </span>
+                                        <span v-else>
+                                            <i class="bi bi-chat-square-text-fill">
+                                            </i>
+                                                <a>
+                                                {{ item.commentCount }}评论关闭
                                             </a>
                                         </span>
                                     </div>
+                                    <div :id="'comments-'+item.id+'-'+item.name" style="margin-top:5px"></div>
                                 </div>
                             </div>
                         </div>
@@ -286,8 +336,8 @@
                     </div>
                     
                 </div>
-                 <button @click="nextSort" style="border: 0px solid gray;padding:15px 6px;border-radius:1px;background: #efefef;cursor: pointer;"> <div>严格有序加载更多</div><div>(体验差)</div></button>
-                  <button @click="next" style="float:right;border: 0px solid gray;padding:15px 6px;border-radius:1px;background: #efefef;cursor: pointer;"> <div>局部有序加载更多</div><div  style="color:red">(体验好)</div></button>
+                 <button @click="nextSort" style="border: 0px solid gray;padding:10px 6px;border-radius:5px;background: white;cursor: pointer;"> <div>加载更多严格有序</div></button>
+                  <button @click="next" style="float:right;border: 0px solid gray;padding:10px 6px;border-radius:5px;background: white;cursor: pointer;"> <div>加载更多局部有序</div></button>
             </div>
 
         </section>
@@ -295,12 +345,12 @@
             <div class="container">
                 <div class="copyright">
                     <p>
-                        ©️ 2023 .
+                        ©️ 2023
                         <a class="beian" href="https://beian.miit.gov.cn/" rel="external nofollow"
                         target="_blank">
                             <i class="bi bi-shield-check me-1">
                             </i>
-                            京ICP备123456号
+                            ICP备123456号
                         </a>
                     </p>
                 </div>
@@ -311,7 +361,8 @@
             <i class="bi bi-chevron-up">
             </i>
         </button>
-        
+        <link href="https://api.hanyu.life/api/artalk/dist/Artalk.css" rel="stylesheet">
+        <script src="https://api.hanyu.life/api/artalk/dist/Artalk.js"></script>
         <script type="text/javascript" src="js/pkg/jquery.min.js" id="jquery-min-js">
         </script>
         <script type="text/javascript" src="js/pkg/bootstrap.min.js" id="bootstrap-js">

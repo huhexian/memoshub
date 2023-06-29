@@ -6,6 +6,8 @@ Author: Crazy uncle
 Author URI: http://www.huitheme.com
 Version: 1.4.202301041836
 */
+
+
 @charset "UTF-8";
 body{font-family:PingFang SC,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;color:#333;font-size:14px;background-color:#f7f7f7;background-image:var(--ds_background);background-attachment:fixed;}
 p{margin-top:0;margin-bottom:10px;}
@@ -198,8 +200,7 @@ img{border:0;max-width:100%;height:auto;}
 .post_loop .post_loop_conter .post_loop_title_box .post_loop_title a{}
 .post_loop .post_loop_conter .post_loop_title_box p{font-size:14px;font-weight:300;line-height:1.8;margin-bottom:15px;}
 .post_images{width:66%;font-size:0;display:table;margin:0px -1% 0px -1%;}
-/*.post_images a{display:inline-block;border-radius:8px;overflow:hidden;float:left;position:relative;}*/
-.post_images a{display:inline-block;border-radius:8px;overflow:hidden;position:relative;}
+.post_images a{display:inline-block;border-radius:8px;overflow:hidden;float:left;position:relative;}
 .post_images a b{position:absolute;display:flex;width:100%;height:100%;background:#0000006e;top:0px;left:0px;color:#fff;z-index:1;font-size:20px;justify-content:center;align-items:center;}
 .post_img_2 a{width:46%;margin:2%;}
 .post_img_3 a:nth-child(1){width:62.67%;}
