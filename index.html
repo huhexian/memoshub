@@ -316,7 +316,7 @@
                                                 <!-- :href="'detail.html?id='+item.id+'&site='+item.api" -->
                                                 <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-if="item.comment_server_adress == '' || item.comment_server_adress == undefined || item.comment_server_adress == null">平台评论
                                             </a>
-                                             <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-else>评论
+                                             <a @click="commentClick" :pageKey="'/m/'+item.id" :serveradress="item.comment_server_adress" :user="item.name" :itemid="item.id" :commentsitename="item.comment_site_name" :comment="item.comment" style="cursor: pointer;" v-else>自有评论
                                             </a>
                                         </span>
                                         <span v-else>
